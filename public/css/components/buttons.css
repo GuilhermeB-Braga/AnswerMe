@@ -1,0 +1,62 @@
+.btn{
+    padding: .5rem 1.4rem;
+    font-size: 1.8rem;
+    border: 1px solid var(--absoluteBlack);
+    color: var(--absoluteBlack);
+    border-radius: 6px;
+    background-color: transparent;
+    transition: all .23s ease-in-out;
+}
+
+.btn:hover{
+    background-color: rgb(8, 8, 8);
+    color: var(--absoluteBlack);
+}
+
+.btn.btn-edit:hover{
+    background-color: #bbbbbb;
+    border: 1px solid #bbbbbb;
+    color: black;
+}
+
+.btn.btn-edit-whiteBg:hover{
+    background-color: #0a0a0a;
+    border: 1px solid #0a0a0a;
+    color: #bbbbbb;
+}
+
+.btn.btn-see:hover{
+    background-color: #0084ff;
+    border: 1px solid #0084ff;
+    color: black;
+}
+
+.btn.btn-delete:hover{
+    background-color: #d41818;
+    border: 1px solid #d41818;
+    color: d5d6d4;
+}
+
+.btn.btn-add:hover{
+    background-color: lightgreen;
+    border: 1px solid lightgreen;
+    color: black;
+}
+
+.btn.btn-add{
+    border: 1px solid var(--absoluteWhite);
+    width: 4rem;
+    height: 4rem;
+    color: var(--absoluteWhite);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn.btn-add:hover{
+    border: 1px solid #008d2f;
+    background-color: #008d2f;
+}
+
+.btn.btn-add{
+    font-size: 2rem;
+}

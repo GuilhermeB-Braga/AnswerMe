@@ -1,0 +1,94 @@
+header{
+    background-color: transparent;
+    height: 6.4rem;
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo,
+header i{
+    cursor: pointer;
+}
+
+.logo{
+    font-family: "Poppins";
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: var(--logoText);
+}
+
+.logo span{
+    font-family: "Poppins";
+    color: var(--highlightColor) ;
+    font-style: normal;
+}
+
+header nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    background-color: var(--smoothWhite);
+    border-radius: 40px;
+    padding: 1rem 1.6rem;
+    transition: all .23s ease-in-out;
+    cursor: pointer;
+}
+
+header nav ul:hover,
+header nav ul:active{
+    background-color: var(--absoluteBlack);
+}
+
+header nav ul li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header nav ul li i{
+    font-size: 2rem;
+    transition: all .23s ease-in-out;
+    color: #5c5c5c;
+}
+
+header nav ul:hover i.onPage{
+    color: var(--highlightColor);
+}
+
+header nav ul li i.onPage{
+    font-weight: 600;
+    color: var(--absoluteBlack);
+}
+
+header nav ul li i:hover{
+    color: var(--highlightColor);
+}
+
+header nav ul li i.ph-sign-out:hover{
+    color: #ff0000;
+}
+
+/* Main */
+
+main{
+    padding: 2.4rem 2rem;
+    min-height: 100vh;
+}
+
+/* Footer */
+
+footer{
+    color: var(--absoluteWhite);
+    height: 6.4rem;
+    padding: 0 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: static;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}

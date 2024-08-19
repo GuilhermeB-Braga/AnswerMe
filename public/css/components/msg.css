@@ -1,0 +1,47 @@
+/* MSG */
+
+.msgWrapper {
+    padding: 2rem;
+    position: absolute;
+    background-color: transparent;
+    z-index: 999;
+    right: 0;
+}
+
+.msg {
+    padding: 1rem;
+    border-radius: 8px 0 8px 8px;
+    width: 100%;
+    text-align: center;
+    color: black;
+    box-shadow: 5px 5px 2rem rgba(0, 0, 0, 0.13);
+    animation: popup .23s ease-in-out;
+}
+
+.msg.success {
+    background-color: #99ff00;
+}
+
+.msg.error {
+    background-color: #e70000;
+}
+
+.msgHidden {
+    transition: all .23s ease-in-out;
+    opacity: 0;
+    transform: translateY(2rem);
+    overflow: hidden;
+    cursor: default;
+}
+
+@keyframes popup {
+    0% {
+        scale: .8;
+        opacity: 0;
+    }
+
+    100% {
+        scale: 1;
+        opacity: 1;
+    }
+}

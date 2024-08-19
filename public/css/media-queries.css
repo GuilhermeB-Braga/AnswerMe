@@ -1,0 +1,71 @@
+
+/* MediaQueries */
+
+
+@media (max-width:921px) {
+
+    main{
+        padding: 5rem;
+    }
+
+    .quizData{
+        gap: 1rem;
+        flex-direction: column;
+    }
+
+    .cardsWrapper{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .card{
+        height: fit-content;
+      
+    }
+
+    .quizControls{
+        margin-top: 1.4rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .quizControls button{
+        width: 100%;
+    }
+    
+    .homeTitle{
+        font-size: 2.6rem;
+    }
+
+    .userName{
+        font-size: 2.6rem;
+    }
+
+    
+    .statistics .wrapper{
+        width: 100%;
+        display: flex;
+        gap: 4rem;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .graphics{
+        width: 100%;
+    }
+
+    .graphicName{
+        font-size: 2rem
+    }
+
+    .profileContainer{
+        height: 12rem;
+    }
+    
+    .imageContainer{
+        height: 14rem;
+        width: 14rem;
+        top: 32%;
+    }
+    
+    
+}

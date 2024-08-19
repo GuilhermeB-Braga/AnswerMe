@@ -1,0 +1,74 @@
+/* Question */
+
+.controls {
+    padding: 0 2rem 1rem 0;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: end;
+}
+
+.questionsUl {
+    display: flex;
+    flex-direction: column;
+    gap: 3.4rem;
+    padding: 8rem;
+}
+
+.questionWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    border-radius: 20px;
+    background-color: var(--quizBg);
+    color: var(--quizText);
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.404);
+}
+
+.questionWrapper .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 2rem 0 2rem;
+}
+
+.questionWrapper .question {
+    font-size: 2rem;
+}
+
+.questionWrapper .alternatives {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.questionWrapper .alternatives li {
+    background-color: var(--smoothWhite);
+    color: var(--absoluteBlack);
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: .5px .5px 2rem rgba(0, 0, 0, 0.993);
+}
+
+.questionWrapper .alternatives li.true {
+    background-color: #86d410;
+}
+
+.none {
+    display: none;
+}
+
+.questionControl {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+    padding: 0 0 2rem 0;
+}
+
+.questionControl .btn {
+    border: 1px solid #cfcfcf;
+    color: #cfcfcf;
+}

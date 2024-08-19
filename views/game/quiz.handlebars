@@ -1,0 +1,190 @@
+<div class="progressbarContainer">
+
+    <div class="progress"></div>
+    
+</div>
+
+<main>
+
+    <audio class="clickEffect" src="/assets/click.mp3"></audio>
+    <h1 class="title">{{quiz.name}}</h1>
+
+
+    <form id="quizForm" action="/game/save/answers" method="post" class="answerForm">
+        <input type="hidden" name="quizId" value="{{quiz._id}}">
+        <input type="hidden" name="userId" value="{{user._id}}">
+
+        <ul class="questionsUl">
+
+            {{#each question}}
+
+
+                <li class="questionWrapper">
+
+                    <input class="id" type="hidden" name="questionId" value="{{_id}}">
+
+                    <div class="wrapper">
+
+                        <p class="answer none">{{answer}}</p>
+
+                    <p class="question"><span class="index"></span> {{question}} </p>
+
+                    <ul class="alternatives">
+
+                        <li data-alternative="a" class="a toSelect">
+
+                            <p class="alternative"> {{alternative_a}} </p>
+                            
+                        </li>
+
+                        <li data-alternative="b" class="b toSelect">
+
+                            <p class="alternative"> {{alternative_b}} </p>
+                            
+                        </li>
+
+                        <li data-alternative="c" class="c toSelect">
+
+                            <p class="alternative"> {{alternative_c}} </p>
+                            
+                        </li>
+
+                        <li data-alternative="d" class="d toSelect">
+
+                            <p class="alternative"> {{alternative_d}} </p>
+                            
+                        </li>
+                        
+                    </ul>
+                        
+                    </div>
+
+                    <input type="hidden" class="userAnswer" name="userAnswer" value="">
+
+                </li>
+
+                
+        {{else}}
+
+            <li>
+                <h2>nenhuma questão disponivel</h2>
+            </li>
+
+        {{/each}}
+        
+    </ul>
+
+    </form>
+
+        <button id="finish" onclick="clickEffect.play()" class="btn btn-send lock">Finalizar<i id="buttonLock" class="ph ph-lock"></i></button>
+    
+</main>
+
+<script>
+
+    const questions = document.querySelectorAll(".questionWrapper")
+    const answersArr = []
+    const clickEffect = document.querySelector(".clickEffect")
+    const totalQuestions = []
+    const progress = document.querySelector(".progress")
+    const progressbarContainer = document.querySelector(".progressbarContainer")
+    const quizForm = document.querySelector("#quizForm")
+    const finishButton = document.querySelector("#finish")
+    const buttonLock = document.querySelector("#buttonLock")
+    
+    finishButton.addEventListener("click", formValidation)
+
+
+    function formValidation(){
+
+        if(answersArr.length !== totalQuestions.length){
+            alert("Responda todas as perguntas!")
+
+        }else{
+            
+           quizForm.submit()
+        }
+        
+    }
+    
+    function progressbar(){
+        progressbarContainer.style.width = "100%"
+        progress.style.width = `${((answersArr.length / totalQuestions.length) * 100).toFixed(0)}%`
+    }
+    
+    
+   questions.forEach( (question, questionIndex) => {
+    const trueAnswer = question.querySelector(".answer").textContent || undefined
+    const questionsIndex = question.querySelector(".index").textContent = `${questionIndex + 1} -`
+    const id = question.querySelector(".id").value
+    const alternativesUl = question.querySelector("ul")
+    const questionName = question.querySelector(".question")
+    const alternatives = alternativesUl.querySelectorAll("li")
+    const selectArr = []
+    const alreadyAnswerd= []
+    let userAnswer = question.querySelector(".userAnswer")
+    totalQuestions.push(1)
+
+    alternatives.forEach( alternative => {
+
+            
+        alternative.addEventListener("click", (event) => {
+
+            clickEffect.play()
+            const data = alternative.getAttribute("data-alternative")
+
+           alternative.classList.add("selectAnswer")
+           selectArr.push(data)
+
+            if(selectArr.length > 1){
+                selectArr.shift()
+                alternatives.forEach(alternative => {
+                    alternative.classList.remove("selectAnswer")
+                })
+                alternative.classList.add("selectAnswer")
+            }
+
+            if(!alreadyAnswerd.includes(id)){
+
+                    const isCorrect = trueAnswer == selectArr ? true : false 
+                
+                    answersArr.push({
+                    questionId: id ,
+                    selectAnswer: selectArr[0],
+                    isCorrect: isCorrect
+                    })
+                    alreadyAnswerd.push(id)
+
+            }else{
+
+                const isCorrect = trueAnswer == selectArr ? true : false 
+
+                answersArr.forEach((answer, index) => {
+                    if(answer.questionId == id){
+
+                        return [
+                            answersArr[index].selectAnswer = selectArr[0],
+                            answersArr[index].isCorrect = isCorrect,
+                            ]
+                    }
+                })
+
+            }
+
+
+            if(totalQuestions.length === answersArr.length){
+               finishButton.classList.replace("lock", "unlock")
+               buttonLock.classList.replace("ph-lock", "ph-lock-open")
+            }
+
+            progressbar()
+
+            userAnswer.value = answersArr[questionIndex]["selectAnswer"]
+        })
+    })
+
+   })
+
+
+</script>
+

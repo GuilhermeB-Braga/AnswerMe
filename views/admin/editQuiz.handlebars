@@ -1,0 +1,37 @@
+<main>
+
+    <h1 class="title">Editar quiz</h1>
+
+    <form class="form" action="/admin/edit/quiz" method="post">
+
+        <input type="hidden" name="id" value="{{quiz._id}}">
+
+        <div class="inputWrapper">
+
+            <label for="name">Nome do Quiz:</label>
+
+            <input type="text" name="name" id="name" value="{{quiz.name}}">
+            
+        </div>
+        
+        <div class="inputWrapper">
+
+            <label for="theme">Tema:</label>
+
+            <input type="text" name="theme" id="theme" maxlength="15" value="{{quiz.theme}}">
+            
+        </div>
+
+        <div class="inputWrapper">
+
+            <label for="description">Descrição:</label>
+
+            <textarea name="description" id="description">{{quiz.description}}</textarea>
+            
+        </div>
+
+        <button class="btn btn-create" type="submit">Salvar alterações</button>
+        
+    </form>
+
+</main>

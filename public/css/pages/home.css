@@ -1,0 +1,129 @@
+/* HOMEPAGE */
+
+.homepage{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-login{
+    border: 1px solid var(--highlightColor);
+    border-radius: 20px;
+    outline: none;
+    background-color: transparent;
+    color: var(--highlightColor);
+    padding: .4rem 2.6rem;
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+    transition: all .23s ease-in-out;
+}
+
+.btn-login:hover{
+    color: black;
+    background-color: var(--highlightColor);
+    box-shadow: 0 0 2rem var(--btnLR-shadow);
+}
+
+.home-section{
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-section .logo{
+    font-size: 6.2rem;
+}
+
+
+.home-section .logoWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-section .logoWrapper{
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.home-section .btn-register{
+    border: 1px solid var(--highlightColor);
+    border-radius: 20px;
+    outline: none;
+    background-color: transparent;
+    color: var(--highlightColor);
+    padding: .6rem 3.4rem;
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+    transition: all .23s ease-in-out;
+}
+
+.home-section .btn-register:hover{
+    color: black;
+    background-color: var(--highlightColor);
+    box-shadow: 0 0 2rem var(--btnLR-shadow);
+}
+
+.cards-section{
+    height: fit-content;
+    padding: 2rem 2rem 6rem 2rem;
+    width: 100%;
+    border-radius: 16px;
+}
+
+/* Quiz on home */
+
+.quiz-home:hover{
+    scale: 1.005;
+    background-color: var(--highlightColor);
+}
+
+.quiz-home:active{
+    transition: none;
+    scale: 1.005;
+    background-color: var(--highlightColor);
+}
+
+/* Popular Quizzes */
+
+.popularQuizzes {
+    width: 100%;
+}
+
+/* Cards */
+
+.cardsWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    gap: 2rem;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 35rem;
+    padding: 2rem;
+    border-radius: 16px;
+    background-color: var(--smoothWhite);
+    color: var(--quizText);
+    box-shadow: .5rem .5rem 2rem #00000071;
+}
+
+.cardTitle {
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+
+.card ul {
+    margin: 2.4rem 0 0;
+    display: flex;
+    gap: 1.6rem;
+    flex-direction: column;
+    font-weight: 300;
+}

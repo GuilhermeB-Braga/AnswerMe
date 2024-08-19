@@ -1,0 +1,139 @@
+<main class="homepage">
+
+    {{#if user}}
+    
+        <section class="home-section">
+
+            <div class="logoWrapper">
+
+                <h1 class="logo">Answer<span>Me</span>.</h1>
+
+                <p>aprender é um jogo de perguntas.</p>
+                
+            </div>
+
+            <div class="btnWrapper">
+
+                <button onclick="javascript:location.href='/game/quizzes'" class="btn-register">Jogar</button>
+
+            </div>
+            
+        </section>
+
+        <section class="popularQuizzes">
+
+            <h2 class="title2">Quizzes mais recentes</h2>
+
+            <ul class="quizzesList">
+
+                {{#each quiz}}
+
+                <li onclick="javascript:location.href='/game/{{_id}}'" class="quiz quiz-home">
+
+                    <div class="quizData">
+                        <span class="theme">{{theme}}</span>
+                        <p class="date">{{date}}</p>
+                    </div>
+                    
+                    <div class="contentWrapper">
+
+                        <h4 class="quizName">{{name}}</h4>
+
+                        <p class="description">{{description}}</p>
+
+                        <p class="author"><b>Criado por</b> {{author}}</p>
+
+                        
+                    </div>
+                    
+                </li>
+
+                {{else}}
+
+                <li><h2>Nenhum quiz disponivel no momento :/</h2></li>
+                
+                {{/each}}
+                
+            </ul>
+            
+        </section>
+    
+    {{else}}
+
+    <section class="home-section">
+
+        <div class="logoWrapper">
+
+            <h1 class="logo">Answer<span>Me</span>.</h1>
+
+            <p>aprender é um jogo de perguntas.</p>
+            
+        </div>
+
+        <div class="btnWrapper">
+
+            <button onclick="javascript:location.href='/register'" class="btn-register">Registre-se</button>
+
+        </div>
+        
+    </section>
+
+    <section class="cards-section">
+
+        <div class="cardsWrapper">
+
+            <div class="card">
+
+            <h3 class="cardTitle">O que é o AnswerMe?</h3>
+
+            <ul>
+
+                <li>Um site inovador onde você pode criar e responder quizzes.</li>
+
+                <li>Ideal para estudantes, professores e entusiastas do conhecimento.</li>
+                
+            </ul>
+            
+        </div>
+
+        <div class="card">
+
+            <h3 class="cardTitle">Nossa missão.</h3>
+
+            <ul>
+
+                <li>Tornar o aprendizado interativo e divertido.</li>
+
+                <li>Facilitar o compartilhamento de conhecimento através de quizzes.</li>
+
+                <li>Ajudar os usuários a absorverem conteúdo de forma mais eficaz.</li>
+                
+            </ul>
+            
+        </div>
+
+        <div class="card">
+
+            <h3 class="cardTitle">Nossa missão.</h3>
+
+            <ul>
+
+                <li>Tornar o aprendizado interativo e divertido.</li>
+
+                <li>Facilitar o compartilhamento de conhecimento através de quizzes.</li>
+
+                <li>Ajudar os usuários a absorverem conteúdo de forma mais eficaz.</li>
+                
+            </ul>
+            
+        </div>
+            
+        </div>
+        
+    </section>
+    
+    {{/if}}
+
+    
+    
+</main>

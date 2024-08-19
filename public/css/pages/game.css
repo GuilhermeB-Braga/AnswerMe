@@ -1,0 +1,188 @@
+.questionWrapper .alternatives li.selectAnswer{
+    background-color: rgb(126, 126, 126);
+    scale: .99;
+}
+
+.questionWrapper .alternatives li.toSelect{
+    transition: all .23s ease-in-out;
+}
+
+.questionWrapper .alternatives li.toSelect:hover{
+    background-color: rgb(105, 105, 105);
+}
+
+
+
+.questionWrapper .alternatives li.false{
+    background-color: #d41818;
+    color: #d5d6d4;
+    scale: 1.03;
+}
+
+.questionWrapper .alternatives li.explain{
+    background-color: #86d41094;
+    scale: 1.03;
+
+}
+
+.btn.btn-send{
+    width: 100%;
+    height: 4.2rem;
+    background-color: rgb(255, 255, 255);
+    margin-top: 2.8rem;
+    border-radius: 6px;
+    color: black;
+    font-family: "Poppins", sans-serif;
+}
+
+.btn.btn-send:hover{
+    background-color: #99ff00;
+
+}
+
+.btn.btn-send{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background-color: rgb(255, 255, 255);
+}
+
+.btn.btn-send.lock{
+    background-color: gray;
+}
+
+.answerContent{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.4rem ;
+    gap: 1rem;
+}
+
+.answerContent .title{
+    margin: 0;
+}
+
+.statisticsWrapper{
+    font-size: 1.8rem;
+    color: black;
+    border-radius: 8px;
+    padding: .5rem;
+    display: flex;
+    gap: 2.4rem;
+}
+.errorsWrapper,
+.pointsWrapper,
+.percentageWrapper{
+    padding: 1rem;
+    box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, 0.39);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    font-weight: 500;
+    background-color: #d5d6d4;
+    color: #1b1a1a ;
+}
+
+.errorsWrapper{
+    background-color: #d41818;
+    color: #d5d6d4;
+}   
+
+.pointsWrapper{
+    background-color: #38d418;
+}
+
+.percentageWrapper{
+    background-color: #d5d6d4;
+}
+
+.progressbarContainer{
+    width: 0;
+    height: .6rem;
+    background-color: rgb(136, 136, 136);
+    position: sticky;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2rem 2rem #00000057;
+    z-index: 99999999;
+    border-radius: 50px;
+}
+
+.progress{
+    background-color: #99ff00;
+    width: 0;
+    height: 100%;
+    border-radius: 50px;
+    transition: all .23s ease-in-out;
+}
+
+@media (max-width: 921px) {
+
+    
+    .answerContent{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 1.4rem ;
+        gap: 1rem;
+    }
+
+    .statisticsWrapper{
+        font-size: 1.6rem;
+        color: black;
+        border-radius: 8px;
+        flex-direction: column;
+        align-items: center;
+        margin: 2rem 0;
+    }
+    .errorsWrapper,
+    .pointsWrapper,
+    .percentageWrapper{
+        
+        width: 100%;
+        padding: 1rem;
+        box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, 0.39);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        justify-content: center;
+    }
+    
+}
+
+/* Game-center */
+
+#config.active,
+.config-blocks .control{
+    background-color: var(--smoothWhite);
+    color: var(--quizText);
+}
+
+#config.active:hover,
+.config-blocks .control:hover{
+    background-color: #929292;
+
+}
+
+.config-blocks{
+    margin: 1rem 0;
+    height: 0;
+    width: fit-content;
+    opacity: 0;
+    transition: all .2s ease;
+    overflow: hidden;
+}
+
+
+.show-configs{
+    height: 20rem;
+    width: fit-content;
+    opacity: 1;
+    scale: 0.97;
+    overflow: visible;
+
+}

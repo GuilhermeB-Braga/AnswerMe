@@ -1,0 +1,126 @@
+<main>
+
+    <div class="controlContainer">
+
+         <div id="config" class="control">
+
+            <i class="ph ph-gear-six"></i>
+
+            <p>Configurações</p>
+            
+        </div>
+
+        <div onclick="javascript:location.href='/game/create/quiz'" class="control">
+
+            <i class="ph ph-list-plus"></i>
+
+            <p>Criar quiz</p>
+            
+        </div>
+
+    </div>
+
+      <div class="config-blocks">
+
+            <div id="themeControl" class="control">
+
+            <i class="ph ph-sun"></i>
+
+            <p>Modo claro</p>
+            
+            </div>
+
+            
+        </div>
+
+    <h1 class="title">Meus Quizzes</h1>
+
+    <ul class="quizzesList">
+
+        {{#each quiz}}
+
+        <li class="quiz">
+
+            <div class="quizData">
+                <span class="theme">{{theme}}</span>
+            </div>
+            
+            <div class="contentWrapper">
+
+                <h4 class="quizName">{{name}}</h4>
+
+                <p class="description">{{description}}</p>
+
+                <div class="quizControls">
+
+                    <button onclick="javascript:location.href = '/game/quizzes/{{_id}}/questions'" class="btn btn-see">Ver questões</button>
+                    
+                    <button onclick="javascript:location.href = '/game/edit/{{_id}}/quiz'" class="btn btn-edit-whiteBg">Editar quiz</button>
+
+                    <form action="/game/delete/quiz" method="post">
+                        <button type="submit" class="btn btn-delete">Deletar</button>
+                        <input type="hidden" name="id" value="{{_id}}">
+                    </form>
+                    
+                </div>
+                
+            </div>
+            
+        </li>
+
+        {{else}}
+
+        <li><h2>Nenhum quiz disponivel no momento :/</h2></li>
+        
+        {{/each}}
+        
+    </ul>
+    
+</main>
+
+<script>
+
+    const configControl = document.querySelector("#config")
+
+    const configBlocks = document.querySelector(".config-blocks")
+
+    const themeControl = document.querySelector("#themeControl")
+    const themeIcon = document.querySelector("#themeControl i")
+    const themeText = document.querySelector("#themeControl p")
+    
+    
+
+    configControl.addEventListener("click", showConfigs)
+    themeControl.addEventListener("click", changeThemeColor)
+
+    function showConfigs(){
+
+        configControl.classList.toggle("active")
+        configBlocks.classList.toggle("show-configs")
+        
+    }
+
+    function changeThemeColor(){
+
+        const body = document.querySelector("body")
+
+        body.classList.toggle("lightMode")
+
+        if(body.classList.contains("lightMode")){
+
+            themeIcon.classList.replace("ph-sun", "ph-moon")
+            themeText.textContent = "Modo Escuro"
+            localStorage.setItem("colorTheme", "lightMode")
+
+        }else{
+            themeIcon.classList.replace("ph-moon", "ph-sun")
+            themeText.textContent = "Modo Claro"
+            localStorage.removeItem("colorTheme", "lightMode")
+
+        }
+
+        showConfigs()
+        
+    }
+    
+</script>

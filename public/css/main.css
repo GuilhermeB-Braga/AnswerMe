@@ -1,0 +1,23 @@
+/* Structure */
+
+@import url('reset.css');
+@import url('base.css');
+@import url('layout.css');
+
+
+/* Pages */
+
+@import url('pages/profile.css');
+@import url('pages/game.css');
+@import url('pages/home.css');
+
+
+/* Components */
+
+@import url('components/buttons.css');
+@import url('components/quiz.css');
+@import url('components/msg.css');
+@import url('components/users.css');
+@import url('components/form.css');
+@import url('components/question.css');
+@import url('components/control.css');

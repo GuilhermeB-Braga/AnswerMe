@@ -1,0 +1,37 @@
+<main>
+
+    <h1 class="title">Novo quiz</h1>
+
+    <form class="form" action="/game/create/quiz" method="post">
+
+        <input type="hidden" name="author" value="{{user.firstName}} {{user.lastName}}">
+
+        <div class="inputWrapper">
+
+            <label for="question">Nome do Quiz:</label>
+
+            <input type="text" name="quizName" id="quizName">
+            
+        </div>
+        
+        <div class="inputWrapper">
+
+            <label for="quizTheme">Tema:</label>
+
+            <input type="text" name="quizTheme" id="quizTheme">
+            
+        </div>
+
+        <div class="inputWrapper">
+
+            <label for="quizDescription">Descrição:</label>
+
+            <textarea name="quizDescription" id="quizDescription"></textarea>
+            
+        </div>
+
+        <button class="btn btn-create" type="submit">Criar</button>
+        
+    </form>
+
+</main>

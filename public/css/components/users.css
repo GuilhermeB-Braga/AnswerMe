@@ -1,0 +1,36 @@
+/* Users */
+
+
+.usersList {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.8rem;
+}
+
+.user {
+    background-color: var(--smoothWhite);
+    color: var(--quizText);
+    padding: 2rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    cursor: pointer;
+    transition: all .23s ease-in-out;
+}
+
+.user.admin {
+    background: linear-gradient(to right, #ffa600, #ffe600, #ffe600, #ffa600);
+}
+
+.userWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.userControl {
+    display: flex;
+    gap: 2rem;
+}

@@ -1,0 +1,88 @@
+<main>
+
+    <h1>Adicionar questões</h1>
+
+    <h3 class="title">{{quiz.name}}</h3>
+
+    <form class="form" action="/admin/create/question" method="post">
+
+        <input type="hidden" name="quiz" value="{{id}}">
+
+        <div class="inputWrapper">
+
+            <label for="question">Pergunta:</label>
+
+            <textarea name="question" id="question"></textarea>
+            
+        </div>
+
+        <div class="wrapper">
+
+            <h3>Alternativas:</h3>
+            <p>Selecione a alternativa correta.</p>
+            
+        </div>
+        
+        <ul>
+ 
+            <li>
+
+                <input type="radio" name="answer" id="answerA" value="a" required>
+                <label for="answerA" class="customLabel"></label>
+
+                <div class="inputWrapper">
+
+                    <textarea name="a" id="a"></textarea>
+                    
+                </div>
+                
+            </li>
+        
+            <li>
+
+                <input type="radio" name="answer" id="answerB" value="b">
+                <label for="answerB" class="customLabel"></label>
+
+                <div class="inputWrapper">
+
+                    <textarea name="b" id="b"></textarea>
+                    
+                </div>
+                
+            </li>
+
+            <li>
+
+                <input type="radio" name="answer" id="answerC" value="c">
+                <label for="answerC" class="customLabel"></label>
+
+                <div class="inputWrapper">
+
+                    <textarea name="c" id="c"></textarea>
+                    
+                </div>
+                
+            </li>
+
+            <li>
+
+                
+                <input type="radio" name="answer" id="answerD" value="d">
+                <label for="answerD" class="customLabel"></label>
+
+                <div class="inputWrapper">
+
+                    <textarea name="d" id="d"></textarea>
+                    
+                </div>
+                
+            </li>
+
+            
+        </ul>
+
+        <button class="btn btn-create" type="submit">Criar</button>
+        
+    </form>
+
+</main>

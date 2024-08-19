@@ -1,0 +1,70 @@
+/* List of Quizzes */
+
+.quizControls{
+    display: flex;
+    gap: 1.6rem;
+}
+
+.quizzesList{
+    margin: 2.4rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+
+}
+
+.quiz{
+    background-color: var(--smoothWhite);
+    color: var(--quizText);
+    padding: 2rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    cursor: pointer;
+    transition: all .23s ease-in-out;
+    box-shadow: .5px .5px 2rem rgba(0, 0, 0, 0.425);
+}
+
+.quizData{
+    display: flex;
+    font-size: 1.2rem;
+    justify-content: space-between;
+}
+
+.date{
+    font-weight: 600;
+}
+
+.theme{
+    background-color: var(--absoluteBlack);
+    color: var(--absoluteWhite);
+    padding: .5rem;
+    border-radius: 6px;
+    width: fit-content;
+}
+
+.quiz .contentWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.quizName{
+    font-size: 2rem;
+}
+
+.quizDescription{
+    font-size: 1.5rem;
+}
+
+.author{
+    font-size: 1.4rem;
+}
+
+.btnControls{
+    display: flex;
+    gap: 3rem;
+}

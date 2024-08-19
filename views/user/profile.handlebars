@@ -1,0 +1,299 @@
+<main>
+
+    <div class="profileContainer">
+
+        <div class="imageContainer">
+
+            <i class="ph ph-user"></i>
+            
+        </div>
+
+        
+    </div>
+     
+    <div class="profileWrapper">
+
+        <div class="dataContainer">
+
+            <div class="usernameWrapper">
+
+                <i class="ph ph-seal-check"></i>
+                    
+                <h3 class="userName">{{user.firstName}} {{user.lastName}} </h3>
+
+                
+            </div>
+            <h4 class="email">{{user.email}}</h4>
+            <h3 class="isAdmin" id="isAdmin">{{user.hierarchy}}</h3>
+            
+        </div>
+        
+        <div class="btnContainer">
+            
+            <button id="edit-profile" class="btn btn-profile">Editar perfil</button>
+
+        </div>
+        
+    </div>
+
+    <h1 class="title2">Estatísticas</h1>
+
+    <div class="statistics">
+
+         {{#each answers}}
+
+            <input class="pointsArr" type="hidden" value="{{points}}">
+            <input class="errorsArr" type="hidden" value="{{totalErr}}">
+
+         {{/each}}
+
+        <div class="wrapper">
+
+            <div class="blocksContainer">
+
+                <div class="block">
+
+                    <p class="data answerdQuizzesDisplay"></p>
+
+                    <h4 class="blockTitle">Quizes respondidos</h4>
+                    
+                </div>
+
+                <div class="block">
+
+                    <p class="data errorsDisplay">0</p>
+
+                    <h4 class="blockTitle">Erros</h4>
+                    
+                </div>
+
+                <div class="block">
+
+                    <p class="data pointsDisplay">0</p>
+
+                    <h4 class="blockTitle">Acertos</h4>
+                    
+                </div>
+
+            </div>
+
+            <div class="graphics">
+
+                <div class="graphicWrapper">
+
+                    <div class="graphicContainer points">
+
+                    <div class="graphicProgress">0.0%</div>
+                    
+                    </div>
+
+                    <p class="graphicName">Taxa de Acertos</p>
+                
+                </div>
+
+                <div class="graphicWrapper">
+
+                    <div class="graphicContainer error">
+
+                    <div class="graphicProgress">0.0%</div>
+                    
+                    </div>
+
+                    <p class="graphicName">Taxa de Erros</p>
+
+                
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="quizContainer">
+
+            <h3 class="title2">Histórico</h3>
+
+            <ul class="quizzesList onProfile">
+
+                {{#each quiz}}
+                
+                <li onclick="javascript:location.href='/game/{{_id}}/{{../user.id}}/answers'" class="quiz quiz-home">
+
+                    <div class="quizData">
+                        <span class="theme">{{theme}}</span>
+                    </div>
+                    
+                    <div class="contentWrapper">
+
+                        <h4 class="quizName">{{name}}</h4>
+
+                        <p class="description">{{description}}</p>
+                        
+                    </div>
+                    
+                </li>
+
+                {{else}}
+
+                <li><p>Nenhum quiz disponivel no momento :/</p></li>
+                
+                {{/each}}
+                
+            </ul>
+
+        </div>
+
+</main>
+
+<div class="overlay none"></div>
+
+<div class="modal edit-profile none">
+
+    <form action="/profile/edit" method="post">
+
+
+            <div class="buttons-wrapper">
+
+                <h4 class="modalTitle">Editar perfil</h4>
+
+                <div class="close-button">
+
+                    <i class="ph ph-x"></i>
+                
+                </div>
+
+            </div>
+
+
+            <div class="inputWrapper">
+
+                <label for="firstName">Primeiro Nome:</label>
+
+                <input type="text" name="firstName" id="firstName" value="{{user.firstName}}">
+                
+            </div>
+
+              <div class="inputWrapper">
+
+
+                <label for="lastName">Sobrenome:</label>
+
+                <input type="text" name="lastName" id="lastName" value="{{user.lastName}}">
+                
+            </div>
+            
+        
+        <div class="inputWrapper">
+
+            <label for="email">Email:</label>
+
+            <input type="email" name="email" id="email" value="{{user.email}}">
+            
+        </div>
+
+        <input type="hidden" name="id" value="{{user._id}}">
+        
+        <button class="btn btn-send">Salvar alterações</button>
+        
+    </form>
+    
+</div>
+
+<script>
+
+    const colorTheme = localStorage.getItem("colorTheme") || 0
+    let graphicColor = "#ffffff73"
+    
+    if(colorTheme == "lightMode"){
+        graphicColor = "#00000073"
+    }
+
+    console.log(graphicColor)
+
+    const editProfileBtn = document.querySelector("#edit-profile")
+    const overlay = document.querySelector(".overlay")
+    const modal = document.querySelector(".modal")
+    const closeModal = document.querySelector(".close-button")
+
+    const userImage = document.querySelector(".imageContainer i")
+    const userSeal = document.querySelector(".ph-seal-check")
+    const isAdmin = document.querySelector(".isAdmin")
+    const profileContainer = document.querySelector(".profileContainer")
+
+    const pointsDisplay = document.querySelector(".pointsDisplay")
+    const errorsDisplay = document.querySelector(".errorsDisplay")
+    const answerdQuizzesDisplay = document.querySelector(".answerdQuizzesDisplay")
+    answerdQuizzesDisplay.textContent = document.querySelectorAll(".quizzesList li.quiz").length
+
+    const pointsValues = document.querySelectorAll(".pointsArr")
+    const errorsValues = document.querySelectorAll(".errorsArr")
+
+    const graphicPoints = document.querySelector(".graphicContainer.points")
+    const graphicPointsPercent = document.querySelector(".graphicContainer.points .graphicProgress")
+
+    const graphicError = document.querySelector(".graphicContainer.error")
+    const graphicErrorPercent = document.querySelector(".graphicContainer.error .graphicProgress")
+    
+    const pointsArr = []
+    const errorsArr = []
+
+
+    pointsValues.forEach(points => {
+        pointsArr.push(Number(points.value))
+    })
+
+    errorsValues.forEach(error => {
+        errorsArr.push(Number(error.value))
+    })
+
+    const points = pointsArr.reduce((acumulator, currentValue) => acumulator + currentValue, 0) || 0
+    const errors = errorsArr.reduce((acumulator, currentValue) => acumulator + currentValue, 0) || 0
+
+
+    const pointsProgress = Number(((points / (points + errors)) * 100).toFixed(2))
+    const pointsNoProgress = Number((100.00 - pointsProgress))
+
+    const errorsProgress = Number(((errors / (points + errors)) * 100).toFixed(2))
+    const errorsNoProgress = Number((100.00 - errorsProgress))
+
+
+    if(points > 0){
+
+        if(colorTheme == 0){
+
+        }
+        
+        graphicPoints.style.background = `conic-gradient(${graphicColor} ${pointsNoProgress}%, #00ff2a 0%`
+        graphicPointsPercent.textContent = `${((points / (points + errors)) * 100).toFixed(1)}%`
+        pointsDisplay.textContent = points
+
+    }
+
+    if(errors > 0){
+        graphicError.style.background = `conic-gradient(${graphicColor} ${errorsNoProgress}%, #FF0000 0%`
+        graphicErrorPercent.textContent = `${((errors / (points + errors)) * 100).toFixed(1)}%`
+        errorsDisplay.textContent = errors
+    }
+    
+    if(isAdmin.textContent == 1){
+        isAdmin.textContent = "Admin"
+        profileContainer.style.background = `linear-gradient(to right, #ffa600 ,#ffe600,#ffe600, #ffa600)`
+        userImage.classList.replace("ph-user", "ph-crown-simple")
+        
+    }else{
+        isAdmin.style.display = "none"
+        userSeal.style.display = "none"
+    }
+    
+    function showHideModal(){
+        modal.classList.toggle("none")
+        overlay.classList.toggle("none")
+        document.querySelector("body").classList.toggle("noOverflow")
+    }
+
+    closeModal.addEventListener("click", showHideModal)
+
+    editProfileBtn.addEventListener("click", showHideModal)
+
+</script>

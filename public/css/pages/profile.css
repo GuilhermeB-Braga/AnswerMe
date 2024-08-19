@@ -1,0 +1,270 @@
+.profileContainer{
+    width: 100%;
+    height: 14rem;
+    border-radius: 8px;
+    background:linear-gradient(to right, #616161, #ebebeb);
+    position: relative;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.452);
+}
+
+.imageContainer{
+    height: 16rem;
+    width: 16rem;
+    border-radius: 50%;
+    background-color: #141414;
+    position: absolute;
+    transform: translate(-50%, 0);
+    top: 24%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imageContainer i{
+    font-size: 6rem;
+}
+
+.profileWrapper{
+    padding: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--smoothWhite);
+    border-radius: 0 0 8px 8px;
+    gap: 2rem;
+}
+
+.dataContainer{
+    text-align: center;
+    width: max-content;
+}
+
+.userName{
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.usernameWrapper{
+    display: flex;
+    gap: .8rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.ph-seal-check{
+    font-size: 1.6rem;
+}
+
+.email{
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.btnContainer{
+    display: flex;
+    gap: 1rem;
+}
+
+.btn.btn-profile{
+    height: 3.8rem;
+    border-radius: 6px;
+    border-color: var(--smoothWhite);
+    color: var(--smoothWhite);
+}
+
+.btn.btn-profile:hover{
+    background-color: var(--smoothWhite);
+    color: var(--quizText);
+}
+
+.statistics{
+    height: auto;
+    padding: 2rem;
+    width: 100%;
+    border-radius: 8px;
+    background-color: var(--quizText);
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-bottom: 2rem;
+}
+
+.statistics .wrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.graphics{
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}   
+
+.graphicContainer{
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: conic-gradient(#ffffff73 0%, #ff0000 0%);
+    position: relative;
+    z-index: 9999;
+}
+
+
+.graphicProgress{
+    height: 10rem;
+    width: 10rem;
+    background-color: var(--quizText);
+    border-radius: 50%;
+    font-size: 2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset .5px .5px 2rem rgba(0, 0, 0, 0.116);
+}
+
+.graphicContainer.error{
+    background: conic-gradient(rgba(255, 255, 255, 0.452) 100% , #ff1e00 0%);
+}
+
+.graphicContainer.points{
+    background: conic-gradient(rgba(255, 255, 255, 0.452) 100%, #00ff2a 0%);
+}
+
+.graphicWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    gap: 1rem;
+    width: fit-content;
+}
+
+.graphicName{
+    color: var(--smoothWhite);
+    font-size: 2.4rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.blocksContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.block{
+    background-color: var(--smoothWhite);
+    color: var(--absoluteBlack);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.8rem;
+    width: 100%;
+}
+
+.blockTitle{
+    font-weight: 400;
+}
+
+.block .data{
+    font-weight: 500;
+}
+
+.onProfile{
+    margin: 0;
+}
+
+.quizContainer{
+    width: 100%;
+}
+
+.profileTitle{
+    font-size: 2.4rem;
+    font-weight: 400;
+    margin: 1.6rem 0;
+}
+
+.modal.edit-profile{
+    width: 90%;
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: var(--quizText);
+    position: absolute;
+    transform: translate( -50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 9999999;
+    box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, 0.479);
+}
+
+.modalTitle{
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.modal.edit-profile form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.modal.edit-profile form button{
+    align-self: center;
+}
+
+.buttons-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.close-button{
+    cursor: pointer;
+    background-color: red;
+    padding: .5rem;
+    display: flex;
+    font-size: 1.8rem;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    transition: all .23s ease-in-out;
+}
+
+.close-button:hover{
+    background-color: darkred;
+    color: rgb(117, 117, 117);
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.527);
+    backdrop-filter: blur(2px);
+    z-index: 9999998;
+}
+
+.noOverflow{
+    overflow: hidden;
+}
+
+.ph-crown-simple{
+    color: rgb(255, 251, 0);
+    text-shadow: 0 0 2rem rgb(255, 251, 0);
+    padding: 1rem;
+}

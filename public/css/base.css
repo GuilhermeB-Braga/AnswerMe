@@ -1,0 +1,81 @@
+:root{
+    font-size: 62.5%;
+    --backgroundColor: #0a0a0a;
+    --absoluteWhite: #fff;
+    --highlightColor: #99ff00;
+    --btnLR-shadow: #99ff00b2;
+    --smoothWhite: #cacaca;
+    --absoluteBlack: #000;
+
+    /* Variables */
+
+    /* Logo */
+
+    --logoText: #f3f3f3;
+    
+    /* Quiz */
+
+    --quizBg: #f3ebeb ;
+    --quizText: #1d1d1d;
+
+    /* Form */
+    
+    --formBg: transparent;
+    --formSpanHover: #5e9c00;
+
+    /* Graphics */
+
+    --graphicColor:#ffffff73;
+
+
+}
+
+body{
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+    background-color: var(--backgroundColor);
+    color: var(--absoluteWhite);
+}
+
+body.lightMode{
+    --backgroundColor: #d6d6d6;
+    --absoluteWhite: #000000;
+    --highlightColor: #6600ff;
+    --btnLR-shadow: #6600ffb2;
+    --smoothWhite: #0e0d0d;
+    --absoluteBlack: #ffffff;
+
+    /* Variables */
+
+    /* Logo */
+
+    --logoText: #030303;
+    
+    /* Quiz */
+
+    --quizBg: #070707 ;
+    --quizText: #fdfdfd;
+
+    /* Form */
+    
+    --formBg: transparent;
+    --formSpanHover: #5e9c00;
+
+    /* Graphics */
+
+    --graphicColor:#000000bd;
+
+    
+}
+
+.title {
+    font-size: 3.2rem;
+    font-weight: 300;
+    color: var(--absoluteWhite);
+}
+
+.title2{
+    font-size: 3.2rem;
+    font-weight: 300;
+    margin: 0 0 2rem 1.2rem;
+}

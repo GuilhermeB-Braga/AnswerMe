@@ -1,0 +1,84 @@
+<main>
+
+    <h1 class="title">Usuários</h1>
+
+    <ul class="usersList">
+
+
+        {{#each user}}
+
+            <li class="user">
+
+                <p id="hierarchy" class="none">{{hierarchy}}</p>
+
+                <h3 class="userName">{{firstName}}  {{lastName}}</h3>
+                
+                <div class="userWrapper">
+
+
+                    <p class="userEmail"><b>Email:</b> {{email}}</p>
+
+                    <p class="createdAt"><b>Conta criada em:</b> {{createdAt}}</p>
+
+                    <p class="userId"><b>Id:</b> {{_id}}</p>
+                    
+                </div>
+
+                <div class="userControl">
+
+                    <form action="/admin/delete/user" method="post">
+
+                        <button type="submit" class="btn btn-delete">Deletar</button>
+                        <input type="hidden" name="id" value="{{_id}}">
+
+                    </form>
+
+                    <form action="/admin/toggle/admin" method="post">
+
+                        <button id="privilegeButton" type="submit" class="btn btn-edit">Privilégios</button>
+                        <input type="hidden" name="id" value="{{_id}}">
+
+                    </form>
+                    
+                </div>
+
+                
+            </li>
+
+        {{else}}
+
+            <li>
+                <h3>Nenhum usuário cadastrado :/</h3>
+            </li>
+
+        {{/each}}
+            
+    </ul>
+
+</main>
+
+
+<script>
+
+    const users = document.querySelectorAll(".user")
+
+    users.forEach((user) => {
+
+        const hierarchy = user.querySelector("#hierarchy").textContent
+
+        const privilegeButton = user.querySelector("#privilegeButton")
+
+        if(hierarchy == 0){
+            privilegeButton.textContent = "Adicionar privilégios"
+            user.classList.remove("admin")
+        }else{
+            privilegeButton.textContent = "Remover privilégios"
+            user.classList.add("admin")
+
+        }
+
+        console.log(privilegeButton)
+        
+    })
+    
+</script>

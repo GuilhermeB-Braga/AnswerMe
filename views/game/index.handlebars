@@ -1,0 +1,33 @@
+<main>
+
+    <h1 class="title">Selecione um quiz e divirta-se!</h1>
+
+    <ul class="quizzesList">
+
+                {{#each quiz}}
+
+                <li onclick="javascript:location.href='/game/{{_id}}'" class="quiz quiz-home">
+
+                    <div class="quizData">
+                        <span class="theme">{{theme}}</span>
+                    </div>
+                    
+                    <div class="contentWrapper">
+
+                        <h4 class="quizName">{{name}}</h4>
+
+                        <p class="description">{{description}}</p>
+                        
+                    </div>
+                    
+                </li>
+
+                {{else}}
+
+                <li><h2>Nenhum quiz disponivel no momento :/</h2></li>
+                
+                {{/each}}
+                
+            </ul>
+    
+</main>

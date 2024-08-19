@@ -1,0 +1,83 @@
+<header>
+
+    <div onclick="javascript:location.href='/'" class="logo">Answer<span>Me</span>.</div>
+
+    <nav>
+
+        {{#if user}}
+
+             <ul class="iconsWrapper">
+
+            <li onclick="javascript:location.href = '/' "><i class="ph ph-house"></i></li>
+
+            {{#if user.hierarchy}}
+
+            <li onclick="javascript:location.href = '/admin/' "><i class="ph ph-lock"></i></li>
+
+            {{/if}}
+            
+            <li onclick="javascript:location.href = '/game' "><i class="ph ph-game-controller"></i></li>
+
+            <li onclick="javascript:location.href = '/profile' "><i class="ph ph-user"></i></li>
+            
+            <li onclick="javascript:location.href = '/logout' "><i class="ph ph-sign-out"></i></li>
+
+            
+        </ul>
+
+        {{else}}
+        
+        <button onclick="javascript:location.href='/login'" class="btn-login">Entrar</button>
+        
+        {{/if}}
+
+        
+    </nav>
+    
+</header>
+
+<script>
+
+    const homeIcon = document.querySelector(".ph-house")
+    const profileIcon = document.querySelector(".ph-user")
+    const logoutIcon = document.querySelector(".ph-sign-out")
+    const adminIcon = document.querySelector(".ph-lock")
+    const gameIcon = document.querySelector(".ph-game-controller")
+    let url = location.href
+
+    if(url.includes("admin")){
+        url = "/admin"
+    } else if(url.includes("profile")){
+        url = "/profile"
+    }else if(url.includes("game")){
+        url = "/game"
+    }else{
+        url = "/"
+    }
+    
+    switch(url){
+        case "/":
+           homeIcon.classList.add("onPage")
+        break;
+
+        case "/admin":
+            adminIcon.classList.add("onPage")
+        break;
+
+        case "/profile":
+            profileIcon.classList.add("onPage")
+        break;
+
+        case "/game":
+            gameIcon.classList.add("onPage")
+        break;
+
+        default:
+
+            break;
+
+    }
+
+    
+    
+</script>

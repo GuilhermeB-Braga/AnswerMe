@@ -1,0 +1,145 @@
+<main>
+
+    <h1 class="title">{{quiz.name}}</h1>
+
+    <h2 class="totalQuestions"></h2>
+
+    <div class="controls">
+
+         <button onclick="javascript:location.href = '/admin/create/{{quiz._id}}/question'" class="btn btn-add"><i class="ph ph-plus"></i></button>
+        
+    </div>
+
+    <ul class="questionsUl">
+
+            {{#each question}}
+
+                <li class="questionWrapper">
+
+                    <div class="wrapper">
+
+                        <p class="answer none">{{answer}}</p>
+
+                    <p class="question"> <span class="index">1- </span> {{question}} </p>
+
+                    <ul class="alternatives">
+
+                        <li class="a">
+
+                            <p class="alternative"> {{alternative_a}} </p>
+                            
+                        </li>
+
+                        <li class="b">
+
+                            <p class="alternative"> {{alternative_b}} </p>
+                            
+                        </li>
+
+                        <li class="c">
+
+                            <p class="alternative"> {{alternative_c}} </p>
+                            
+                        </li>
+
+                        <li class="d">
+
+                            <p class="alternative"> {{alternative_d}} </p>
+                            
+                        </li>
+                        
+                    </ul>
+                        
+                    <div class="questionControl">
+
+                        <button onclick="javascript:location.href='/admin/edit/{{quiz._id}}/question/{{_id}}'" class="btn btn-edit">Editar</button>
+                        
+                        <form action="/admin/delete/question" method="post">
+
+                            <button type="submit" class="btn btn-delete">Deletar</button>
+                            <input type="hidden" name="id" value="{{_id}}">
+                            <input type="hidden" name="quizId" value="{{quiz._id}}">
+
+                        </form>
+
+                    </div>
+                    
+                    </div>
+
+
+
+                </li>
+                
+        {{else}}
+
+            <li>
+                <h2>nenhuma questão disponivel</h2>
+            </li>
+
+        {{/each}}
+        
+    </ul>
+
+    
+</main>
+
+<script>
+
+    const quizName = document.querySelector(".title")
+    const questions = document.querySelectorAll(".questionWrapper")
+    const quizData = JSON.parse(localStorage.getItem("quizData")) || []
+    const totalQuestion = document.querySelector(".totalQuestions")
+    const countQuestion = []
+
+    questions.forEach((question, index) => {
+
+        const questionsIndex = question.querySelector(".index").textContent = `${index + 1} -`
+        const answer = question.querySelector(".answer").textContent || undefined
+        const alternative_a = question.querySelector(".a")
+        const alternative_b = question.querySelector(".b")
+        const alternative_c = question.querySelector(".c")
+        const alternative_d = question.querySelector(".d")
+        countQuestion.push(answer)
+
+        switch(answer){
+            case "a":
+
+                alternative_a.classList.add("true")
+
+            break;
+
+            case "b":
+
+                alternative_b.classList.add("true")
+
+            break;
+
+            case "c":
+
+                alternative_c.classList.add("true")
+
+            break;
+
+            case "d":
+
+                alternative_d.classList.add("true")
+
+            break;
+
+            default:
+
+                return
+                
+            break;
+        }
+        
+    })
+
+    quizData.push({
+        quizName: quizName.textContent,
+        totalQuestions: countQuestion.length
+   })
+
+    
+</script>
+

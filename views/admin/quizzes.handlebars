@@ -1,0 +1,46 @@
+<main>
+
+    <h1 class="title">Gerenciar Quizzes</h1>
+
+    <ul class="quizzesList">
+
+        {{#each quiz}}
+
+        <li class="quiz">
+
+            <div class="quizData">
+                <span class="theme">{{theme}}</span>
+            </div>
+            
+            <div class="contentWrapper">
+
+                <h4 class="quizName">{{name}}</h4>
+
+                <p class="description">{{description}}</p>
+
+                <div class="quizControls">
+
+                    <button onclick="javascript:location.href = '/admin/quizzes/{{_id}}/questions'" class="btn btn-see">Ver questões</button>
+                    
+                    <button onclick="javascript:location.href = '/admin/edit/{{_id}}/quiz'" class="btn btn-edit-whiteBg">Editar quiz</button>
+
+                    <form action="/admin/delete/quiz" method="post">
+                        <button type="submit" class="btn btn-delete">Deletar</button>
+                        <input type="hidden" name="id" value="{{_id}}">
+                    </form>
+                    
+                </div>
+                
+            </div>
+            
+        </li>
+
+        {{else}}
+
+        <li><h2>Nenhum quiz disponivel no momento :/</h2></li>
+        
+        {{/each}}
+        
+    </ul>
+    
+</main>

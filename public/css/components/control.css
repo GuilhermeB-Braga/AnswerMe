@@ -1,0 +1,39 @@
+.controlContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    margin-bottom: 3.2rem;
+}
+
+.control {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.6rem;
+    background-color: var(--smoothWhite);
+    color: var(--absoluteBlack);
+    border-radius: 20px;
+    height: 16rem;
+    min-width: 16rem;
+    transition: all .23s ease-in-out;
+    border: 1px solid transparent;
+    box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, 0.39);
+
+}
+
+.control p {
+    text-align: center;
+}
+
+.control i {
+    color: var(--absoluteBlack);
+    font-size: 3.2rem;
+}
+
+.control:hover {
+    border: 1px solid var(--highlightColor);
+    scale: 1.02;
+}
