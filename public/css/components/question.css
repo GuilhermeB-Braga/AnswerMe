@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: column;
     gap: 3.4rem;
-    padding: 8rem;
+    padding: 4rem 24rem;
 }
 
 .questionWrapper {
@@ -20,15 +20,15 @@
     flex-direction: column;
     gap: 1.6rem;
     border-radius: 20px;
-    background-color: var(--quizBg);
-    color: var(--quizText);
+    background-color: var(--questionBg);
+    color: var(--questionText);
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.404);
 }
 
 .questionWrapper .wrapper {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 4rem;
     padding: 2rem 2rem 0 2rem;
 }
 
@@ -49,7 +49,7 @@
     padding: 1rem;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: .5px .5px 2rem rgba(0, 0, 0, 0.993);
+    box-shadow: .5px .5px 2rem rgba(0, 0, 0, 0.288);
 }
 
 .questionWrapper .alternatives li.true {
@@ -71,4 +71,20 @@
 .questionControl .btn {
     border: 1px solid #cfcfcf;
     color: #cfcfcf;
+}
+
+.questionImage{
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    align-self: center;
+    border-radius: 6px;
+    box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, 0.233);
+    cursor: pointer;
+    transition: all .23s ease-in-out;
+}
+
+.questionImage:hover{
+    transform: scale(.98);
+    filter: opacity(90%);
 }

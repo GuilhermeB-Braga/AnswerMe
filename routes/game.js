@@ -126,8 +126,6 @@ router.post("/delete/quiz",isLogged, (req, res) => {
 })
 
 
-
-
 // Question
 
 // Create
@@ -147,6 +145,7 @@ router.post("/create/question", isLogged, (req, res) => {
     const newQuestion = {
         question: req.body.question,
         quiz: req.body.quiz,
+        questionImage: req.body.questionImage,
         answer: req.body.answer,
         alternative_a: req.body.a,
         alternative_b: req.body.b,
@@ -185,6 +184,7 @@ router.get("/edit/:quizId/question/:id", isLogged, (req, res) => {
      Question.findOne({_id: req.body.id}).then(question => {
  
          question.question = req.body.question,
+         question.questionImage = req.body.questionImage,
          question.answer = req.body.answer,
          question.alternative_a = req.body.a,
          question.alternative_b = req.body.b,

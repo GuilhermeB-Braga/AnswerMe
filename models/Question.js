@@ -8,6 +8,10 @@ const Question = new Schema({
         require: true
     },
 
+    questionImage: {
+        type: String,
+    },
+
     quiz: {
         type:mongoose.SchemaTypes.ObjectId,
         ref: "questions",

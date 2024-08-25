@@ -5,7 +5,23 @@
 @media (max-width:921px) {
 
     main{
-        padding: 5rem;
+        padding: 2rem;
+    }
+    
+    .questionWrapper{
+        width: 100%;
+    }
+
+    .questionImage{
+        width: 100%;
+    }
+
+    .questionsUl {
+        padding: 4rem 1rem 1rem 1rem;
+    }
+
+    .modal.view-image{
+        width: 90%            
     }
 
     .quizData{
@@ -67,5 +83,13 @@
         top: 32%;
     }
     
+    .user-form{
+        padding: 2rem 0;
+
+        .title{
+            font-size: 2.4rem;
+        }
+    }
+
     
 }

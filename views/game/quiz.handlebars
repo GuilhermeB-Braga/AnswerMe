@@ -29,6 +29,8 @@
 
                     <p class="question"><span class="index"></span> {{question}} </p>
 
+                    <img src="{{questionImage}}" alt="imagem da questão." class="questionImage">
+
                     <ul class="alternatives">
 
                         <li data-alternative="a" class="a toSelect">
@@ -79,6 +81,11 @@
         <button id="finish" onclick="clickEffect.play()" class="btn btn-send lock">Finalizar<i id="buttonLock" class="ph ph-lock"></i></button>
     
 </main>
+
+{{>imageModal}}
+
+<script src="/js/isThereAnImage.js"></script>
+
 
 <script>
 

@@ -21,3 +21,8 @@
 @import url('components/form.css');
 @import url('components/question.css');
 @import url('components/control.css');
+@import url('components/imageModal.css');
+
+/* Media queries */
+
+@import url('media-queries.css');

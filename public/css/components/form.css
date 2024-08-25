@@ -160,3 +160,10 @@ input[type="radio"]:checked+.customLabel {
 input[type="radio"]:checked+.customLabel::after {
     background-color: #6eb800;
 }
+
+.user-form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 20%;
+}

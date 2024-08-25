@@ -252,7 +252,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 1000%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.527);
     backdrop-filter: blur(2px);

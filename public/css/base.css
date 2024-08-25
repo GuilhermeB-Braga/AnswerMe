@@ -17,6 +17,9 @@
 
     --quizBg: #f3ebeb ;
     --quizText: #1d1d1d;
+    
+    --questionBg:rgb(31, 31, 31);
+    --questionText:white;
 
     /* Form */
     
@@ -55,6 +58,10 @@ body.lightMode{
 
     --quizBg: #070707 ;
     --quizText: #fdfdfd;
+
+    
+    --questionBg:#fff;
+    --questionText:#1f1f1f;
 
     /* Form */
     
