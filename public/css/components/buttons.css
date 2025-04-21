@@ -31,6 +31,10 @@
     color: black;
 }
 
+.btn.btn-delete.black{
+    border: color(--absoluteBlack);
+}
+
 .btn.btn-delete:hover{
     background-color: #d41818;
     border: 1px solid #d41818;

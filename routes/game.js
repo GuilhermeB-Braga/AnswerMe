@@ -215,12 +215,7 @@ router.post("/delete/question/",isLogged, (req, res) => {
     
 })
 
-
 // 
-
-
-
-
 
 router.get("/quizzes",isLogged, (req, res) => {
 

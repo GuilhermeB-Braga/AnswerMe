@@ -20,6 +20,7 @@
     
     --questionBg:rgb(31, 31, 31);
     --questionText:white;
+    --questionBtn: #cfcfcf;
 
     /* Form */
     
@@ -41,7 +42,7 @@ body{
 }
 
 body.lightMode{
-    --backgroundColor: #d6d6d6;
+    --backgroundColor: #ffffff;
     --absoluteWhite: #000000;
     --highlightColor: #6600ff;
     --btnLR-shadow: #6600ffb2;
@@ -56,12 +57,13 @@ body.lightMode{
     
     /* Quiz */
 
-    --quizBg: #070707 ;
-    --quizText: #fdfdfd;
+    --quizBg: #1d1d1d ;
+    --quizText: #f3ebeb;
 
     
-    --questionBg:#fff;
+    --questionBg:#ede8ee;
     --questionText:#1f1f1f;
+    --questionBtn: #141414;
 
     /* Form */
     

@@ -154,7 +154,7 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked+.customLabel {
-    background-color: var(--highlightColor);
+    background-color: #99ff00;
 }
 
 input[type="radio"]:checked+.customLabel::after {

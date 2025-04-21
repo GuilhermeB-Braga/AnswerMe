@@ -4,30 +4,32 @@
 
     <ul class="quizzesList">
 
-                {{#each quiz}}
+        {{#each quiz}}
 
-                <li onclick="javascript:location.href='/game/{{_id}}'" class="quiz quiz-home">
+        <li onclick="javascript:location.href='/game/{{_id}}'" class="quiz quiz-home">
 
-                    <div class="quizData">
-                        <span class="theme">{{theme}}</span>
-                    </div>
-                    
-                    <div class="contentWrapper">
+            <div class="quizData">
+                <span class="theme">{{theme}}</span>
+            </div>
+            
+            <div class="contentWrapper">
 
-                        <h4 class="quizName">{{name}}</h4>
+                <h4 class="quizName">{{name}}</h4>
 
-                        <p class="description">{{description}}</p>
-                        
-                    </div>
-                    
-                </li>
-
-                {{else}}
-
-                <li><h2>Nenhum quiz disponivel no momento :/</h2></li>
+                <p class="description">{{description}}</p>
                 
-                {{/each}}
-                
-            </ul>
+            </div>
+            
+        </li>
+
+        {{else}}
+
+        <li><h2>Nenhum quiz disponivel no momento :/</h2></li>
+        
+        {{/each}}
+        
+    </ul>
     
 </main>
+
+<script src="/js/searchQuiz.js"></script>

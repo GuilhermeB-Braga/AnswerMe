@@ -16,12 +16,12 @@
 .questionWrapper .alternatives li.false{
     background-color: #d41818;
     color: #d5d6d4;
-    scale: 1.03;
+    scale: 1.01;
 }
 
 .questionWrapper .alternatives li.explain{
     background-color: #86d41094;
-    scale: 1.03;
+    scale: 1.01;
 
 }
 

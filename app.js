@@ -14,6 +14,7 @@ const passport = require("passport")
 require("./config/auth")(passport)
 const flash = require("connect-flash")
 const dayjs = require("dayjs")
+require("dotenv").config()
 
 // Configs
 
@@ -24,7 +25,7 @@ const dayjs = require("dayjs")
         resave: true,
         saveUninitialized: true
     }))
-
+    
     app.use(flash())
 
     app.use(passport.initialize())
@@ -64,7 +65,7 @@ const dayjs = require("dayjs")
 
     mongoose.Promise = global.Promise
         
-    mongoose.connect("mongodb://localhost:27017/answerme").then(()=>{
+    mongoose.connect(`mongodb+srv://${process.env.USER_DB}:${process.env.PASSWORD_DB}@answerme.lrsgibt.mongodb.net/?retryWrites=true&w=majority&appName=AnswerMe`).then(()=>{
         console.log("#Conectado ao Banco de Dados :)")
     }).catch( err => {
         console.log("#Falha ao se conectar ao banco de dados :/ ERROR => " + err)

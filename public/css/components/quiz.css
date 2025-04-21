@@ -16,16 +16,16 @@
 }
 
 .quiz{
-    background-color: var(--smoothWhite);
+    background: var(--quizBg);
     color: var(--quizText);
     padding: 2rem;
-    border-radius: 16px;
+    border-radius: 6px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     cursor: pointer;
     transition: all .23s ease-in-out;
-    box-shadow: .5px .5px 2rem rgba(0, 0, 0, 0.425);
+    box-shadow: .2rem .2rem 2rem rgba(0, 0, 0, 0.205);
 }
 
 .quizData{

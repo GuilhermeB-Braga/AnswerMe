@@ -15,12 +15,12 @@
     padding: 1.6rem;
     background-color: var(--smoothWhite);
     color: var(--absoluteBlack);
-    border-radius: 20px;
+    border-radius: 2rem;
     height: 16rem;
     min-width: 16rem;
     transition: all .23s ease-in-out;
     border: 1px solid transparent;
-    box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, 0.39);
+    box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, 0.164);
 
 }
 

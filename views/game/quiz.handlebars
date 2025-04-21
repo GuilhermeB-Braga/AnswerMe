@@ -84,9 +84,6 @@
 
 {{>imageModal}}
 
-<script src="/js/isThereAnImage.js"></script>
-
-
 <script>
 
     const questions = document.querySelectorAll(".questionWrapper")
@@ -186,7 +183,13 @@
 
             progressbar()
 
-            userAnswer.value = answersArr[questionIndex]["selectAnswer"]
+            const indexOfAnswerObj = answersArr.findIndex(answer => answer.questionId === id)
+
+            if(indexOfAnswerObj == -1){
+                indexOfAnswerObj = questionIndex
+            }
+
+            userAnswer.value = answersArr[indexOfAnswerObj]["selectAnswer"]
         })
     })
 
